@@ -13,7 +13,15 @@ GROUP BY c.login;
 если поле finished == true, то вывести статус 2. 
 если поле canсelled == true, то вывести статус -1. 
 если поле inDelivery == true, то вывести статус 1. 
-Для остальных случаев вывести 0. запрос: SELECT track, CASE WHEN finished = true THEN 2 WHEN cancelled = true THEN -1 WHEN "inDelivery" = true THEN 1 ELSE 0 END AS status FROM "Orders"; Для данных запросов приложены скиншоты.
+Для остальных случаев вывести 0. 
+Запрос: SELECT track,
+       CASE
+           WHEN finished = true THEN 2
+           WHEN cancelled = true THEN -1
+           WHEN "inDelivery" = true THEN 1
+                   ELSE 0
+       END
+FROM "Orders";
 
 Автоматизация теста.
 Для запуска теста необходимо в файл configuration скопировить URL В файле request нажать кнопку Run
